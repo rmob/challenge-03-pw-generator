@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Password Generator</h1>
+      </header>
+      <div class="card">
+        <div class="card-header">
+          <h2>Generate a Password</h2>
+        </div>
+        <div class="card-body">
+          <textarea
+            readonly
+            id="password"
+            placeholder="Your Secure Password"
+            aria-label="Generated Password"
+          ></textarea>
+        </div>
+        <div class="card-footer">
+          <button id="generate" class="btn">Generate Password</button>
+        </div>
+      </div>
+    </div>
+      <form class="criteria-box" id="c-b">
+        <section class="checks">
+        <div id="num-minmax">
+        <label for="char-count">Req'd number of characters?<input type="number" id="char-count" required min="8" max="128" value=''/></label>
+        </div>
+        <div>
+          <p>What kinds of characters?</p>
+        <input type="checkbox" id="uppercase" name="uppercase" value="upperCase">
+        <label for="uppercase">Uppercase</label>
+        </div>
+        <div>
+        <input type="checkbox" id="lowercase" name="lowercase" value="lowerCase">
+        <label for="lowercase">Lowercase</label>
+        </div>
+        <div>
+        <input type="checkbox" id="special" name="special" value="Special">
+        <label for="special">Special</label>
+        </div>
+        <div>
+        <input type="checkbox" id="numeric" name="numeric" value="Number">
+        <label for="numeric">Number</label>
+        </div>
+        <div class="btn-submit">
+        <label for="submit"><input type="submit" id='submit' name="submit" value="Submit"></label></div> 
+        </section>
+      </form>
+    <script src="script.js"></script>
+  </body>
+</html>
