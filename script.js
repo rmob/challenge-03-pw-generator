@@ -8,22 +8,22 @@ var special = ['!', '@', '#', '$', '%', '&', '.', '?', '-'];
 
 var criteria = document.getElementById('c-b');
 var passwordText = document.querySelector("#password");
-var textArea = document.querySelector('textarea');
+// var textArea = document.querySelector('textarea');
 
-function clearThis(x) {
-  if (x.textContent !== ' ') {
-    x.textContent = ' ';
-  }
-}
+// function clearThis(x) {
+//   if (x.textContent !== ' ') {
+//     x.textContent = ' ';
+//   }
+// }
 
 function revealCriteriaBox() {
-  
+  passwordText.value = '';
   if (criteria.style.display === 'none') {
     criteria.style.display = 'flex';
   } else {
     criteria.style.display = 'none';
   }
-  passwordText.value = ' ';
+  
 }
   
 
@@ -65,8 +65,8 @@ var pwLength = document.getElementById('char-count').value;
 
 
 
-function writePassword(e) {
-  e.preventDefault();
+function writePassword() {
+//   e.preventDefault();
   // clearThis(passwordText);
   
   for(i = 0; i < pwLength; i++) {
@@ -134,3 +134,4 @@ revealCriteriaBox();
 generateBtn.onclick = revealCriteriaBox;
 submitBtn = document.getElementById('submit');
 submitBtn.onclick = writePassword;
+// document.getElementById('submit').onclick = writePassword();
