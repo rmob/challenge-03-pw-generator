@@ -108,7 +108,7 @@ function writePassword() {
 
   passwordText.value = password;
   criteria.style.display = 'none';
-  
+  console.log(password)
 }
 
 
