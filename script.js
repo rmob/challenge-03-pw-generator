@@ -1,20 +1,27 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var criteria = document.getElementById('c-b');
+var passwordText = document.querySelector("#password");
+var submitBtn = document.getElementById('submit');
+
+var uChecked = document.getElementById('uppercase')
+var lChecked = document.getElementById('lowercase')
+var sChecked = document.getElementById('special')
+var nChecked = document.getElementById('numeric')
 
 var alphaLower = 'abcdefghijklmnopqrstuvwxyz';
 var alphaUpper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var num = [0,1,2,3,4,5,6,7,8,9];
 var special = ['!', '@', '#', '$', '%', '&', '.', '?', '-'];
 
-var criteria = document.getElementById('c-b');
-var passwordText = document.querySelector("#password");
-// var textArea = document.querySelector('textarea');
+var randomCharArray = [];
+var pwArray = [];
 
-// function clearThis(x) {
-//   if (x.textContent !== ' ') {
-//     x.textContent = ' ';
-//   }
-// }
+
+
+
+
+
 
 function revealCriteriaBox() {
   passwordText.value = '';
@@ -52,23 +59,9 @@ function generateRandomChar () {
 
 }
 
-var uChecked = document.getElementById('uppercase')
-var lChecked = document.getElementById('lowercase')
-var sChecked = document.getElementById('special')
-var nChecked = document.getElementById('numeric')
-
-var randomCharArray = [];
-var pwArray = [];
-
-var pwLength = document.getElementById('char-count').value;
-
-
-
 
 function writePassword() {
-//   e.preventDefault();
-  // clearThis(passwordText);
-  
+  var pwLength = document.getElementById('char-count').value;
   for(i = 0; i < pwLength; i++) {
 
     if (uChecked.checked === true) {
@@ -103,35 +96,15 @@ function writePassword() {
 
  
   password = pwArray.join('')
- 
- 
-
   passwordText.value = password;
   criteria.style.display = 'none';
-  console.log(password)
 }
 
 
 
   
-// Add event listener to generate button
-// generateBtn.addEventListener("click", revealCriteriaBox());
-// console.log(generateRandomLowercase());
-// console.log(writePassword());
-// console.log(randomCharArray.slice(0, pwLength).join(''));
 
-//for the length of pwLength i want to loop over the randomCharArray to push
-//randomly generated values to the pwArray
-
-// for (i = 0; i < pwLength; i++) {
-//   var selection = randomCharArray[Math.floor(Math.random() * randomCharArray.length)]
-//   pwArray.push(selection);
-
-// }
-
-// console.log(writePassword())
 revealCriteriaBox();
 generateBtn.onclick = revealCriteriaBox;
-submitBtn = document.getElementById('submit');
 submitBtn.onclick = writePassword;
-// document.getElementById('submit').onclick = writePassword();
+
